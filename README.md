@@ -33,3 +33,12 @@ https://github.com/uniform641/treeparse
 # serializeTreeNode
 
 把二叉树序列号成类似于 JSON 对象的形式字符串
+
+
+# 图片展示
+
+![这是图片]("屏幕截图 2023-04-08 215115.png" "Magic Gardens")
+
+![这是图片]("屏幕截图 2023-04-08 215258.png" "Magic Gardens")
+
+![这是图片]("屏幕截图 2023-04-08 215346.png" "Magic Gardens")
