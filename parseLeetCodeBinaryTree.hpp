@@ -59,7 +59,7 @@ int tokenize(std::string &rawString, std::queue<token> &tokenQueue)
             }
             continue;
         }
-        else if (rawString[i] == 'n' && i + 3 < rawString.size() && rawString[i + 1] == 'u' && rawString[i + 2] == 'l' && rawString[i + 2] == 'l')
+        else if (rawString[i] == 'n' && static_cast<unsigned long long>(i) + 3 < rawString.size() && rawString[static_cast<std::basic_string<char, std::char_traits<char>, std::allocator<char>>::size_type>(i) + 1] == 'u' && rawString[static_cast<std::basic_string<char, std::char_traits<char>, std::allocator<char>>::size_type>(i) + 2] == 'l' && rawString[static_cast<std::basic_string<char, std::char_traits<char>, std::allocator<char>>::size_type>(i) + 2] == 'l')
         {
             i += 3;
             tokenQueue.push(token{false, 0});
