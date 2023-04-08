@@ -3,7 +3,7 @@ leetcode-treenode-cpp
 
 把LeetCode的二叉树和字符串相互转换的函数
 
-#thanks to 
+# thanks to 
 
 https://github.com/uniform641/treeparse
 
