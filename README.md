@@ -4,6 +4,8 @@ leetcode-treenode-cpp
 
 把 LeetCode 形式 的二叉树和字符串相互转换的函数
 
+支持正整数,负整数,null组成的数组的表示形式.
+
 # thanks to
 
 https://github.com/uniform641/treeparse
