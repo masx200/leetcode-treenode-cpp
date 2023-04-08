@@ -32,3 +32,5 @@
 *.app
 x64
 *.bin
+*.json
+*.pdb
