@@ -10,7 +10,7 @@ https://github.com/uniform641/treeparse
 # TreeNode
 二叉树的结构体
 # traversalTreeNode
-遍历二叉树所有节点放入数组中
+遍历二叉树所有节点放入向量中
 # parseLeetCodeBinaryTree
 把字符串解析成二叉树结构体
 # LeetCodeTreeNodeToString
