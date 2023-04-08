@@ -34,7 +34,6 @@ https://github.com/uniform641/treeparse
 
 把二叉树序列号成类似于 JSON 对象的形式字符串
 
-
 # 图片展示
 
 <img src="屏幕截图 2023-04-08 215115.png">
