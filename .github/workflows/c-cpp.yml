@@ -2,9 +2,9 @@ name: C/C++ CI
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "main" ]
   pull_request:
-    branches: [ "master" ]
+    branches: [ "main" ]
 
 jobs:
   build:
@@ -19,4 +19,3 @@ jobs:
       run: sh ./make.sh
     - name: test
       run: sh ./test.sh
-
