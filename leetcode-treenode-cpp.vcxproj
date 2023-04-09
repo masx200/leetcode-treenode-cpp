@@ -109,7 +109,7 @@
       <LanguageStandard_C>stdc17</LanguageStandard_C>
       <EnableModules>true</EnableModules>
       <ScanSourceForModuleDependencies>true</ScanSourceForModuleDependencies>
-      <CompileAs>Default</CompileAs>
+      <CompileAs>CompileAsCppModule</CompileAs>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -123,7 +123,7 @@
       <LanguageStandard_C>stdc17</LanguageStandard_C>
       <EnableModules>true</EnableModules>
       <ScanSourceForModuleDependencies>true</ScanSourceForModuleDependencies>
-      <CompileAs>Default</CompileAs>
+      <CompileAs>CompileAsCppModule</CompileAs>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
