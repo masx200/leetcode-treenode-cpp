@@ -1,3 +1,5 @@
+module;
+#include <stdlib.h>
 //// +build ignore
 //
 // #pragma once
@@ -14,7 +16,7 @@
 
 export module leetcode_treenode_cpp.freeTreeNode;
 import leetcode_treenode_cpp.TreeNode;
-import <stdlib.h>;
+
 export namespace leetcode_treenode_cpp {
 export void freeTreeNode(TreeNode* root)
 {
