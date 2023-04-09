@@ -78,7 +78,8 @@ int tokenize(std::string& rawString, std::queue<token>& tokenQueue)
 // input format example: "[1,2,5,3,4,null,6]"
 // return status: 0: success, -1: parse error, -2: tree structure invalid
 // warning: this parser does not check the input format validity
-export int parseLeetCodeBinaryTree(std::string& rawString, TreeNode** pRoot)
+/*export*/ 
+int parseLeetCodeBinaryTree(std::string& rawString, TreeNode** pRoot)
 {
     *pRoot = nullptr;
     std::queue<token> tokenQueue;
