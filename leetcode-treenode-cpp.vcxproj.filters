@@ -39,5 +39,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="TreeNode.ixx" />
+    <ClCompile Include="traversalTreeNode.ixx" />
   </ItemGroup>
 </Project>
