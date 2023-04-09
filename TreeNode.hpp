@@ -1,7 +1,10 @@
 // +build ignore
-
 #pragma once
+
 #include <iostream>
+
+// namespace test {
+
 using namespace std;
 struct TreeNode {
     int val;
@@ -30,3 +33,8 @@ struct TreeNode {
     }
 };
 // #endif //
+/*void test(){
+    cout << "test";
+}*/
+
+//}
