@@ -8,14 +8,8 @@ cd vcpkg
  sh bootstrap-vcpkg.sh
  
  
-#git clone https://github.com/google/googletest
-#cd googletest
-
-#mkdir build
-
-#cd build
-
-#cmake ..
-
-#make -j8
-#sudo make install
+ ~/vcpkg/vcpkg integrate install
+ 
+ ~/vcpkg/vcpkg install  cppunit
+ 
+ 
