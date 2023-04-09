@@ -18,12 +18,26 @@
     <ClCompile Include="test.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="TreeNode.ixx" />
-    <ClCompile Include="traversalTreeNode.ixx" />
-    <ClCompile Include="bfsTravelsal.ixx" />
-    <ClCompile Include="freeTreeNode.ixx" />
-    <ClCompile Include="LeetCodeTreeNodeToString.ixx" />
-    <ClCompile Include="parseLeetCodeBinaryTree.ixx" />
-    <ClCompile Include="serializeTreeNode.ixx" />
+    <ClCompile Include="bfsTravelsal.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="freeTreeNode.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="LeetCodeTreeNodeToString.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="parseLeetCodeBinaryTree.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="serializeTreeNode.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="traversalTreeNode.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TreeNode.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
