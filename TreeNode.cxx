@@ -1,5 +1,5 @@
 export module leetcode_treenode_cpp.TreeNode;
-/*export/* namespace leetcode_treenode_cpp {
+/*export*/ namespace leetcode_treenode_cpp {
 export struct TreeNode {
     int val = 0;
     TreeNode* left = nullptr;
