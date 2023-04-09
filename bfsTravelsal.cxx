@@ -10,12 +10,12 @@ export module leetcode_treenode_cpp.bfsTravelsal;
 // import <string>;
 // import <queue>;
 import leetcode_treenode_cpp.TreeNode;
-export namespace leetcode_treenode_cpp
+/*export */namespace leetcode_treenode_cpp
 {
     // namespace test{
     // using namespace std;
     // https://github.com/uniform641/treeparse/blob/master/test.cpp
-    /* export */
+     export 
 
     std::string
     bfsTravelsal(TreeNode *root)

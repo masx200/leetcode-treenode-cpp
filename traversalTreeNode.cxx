@@ -5,10 +5,10 @@ export module leetcode_treenode_cpp.traversalTreeNode;
 //import <vector>;
 
 import leetcode_treenode_cpp.TreeNode;
-export namespace leetcode_treenode_cpp {
+/*export*/ namespace leetcode_treenode_cpp {
 using std::vector;
 
-/*export*/ void traversalTreeNode(TreeNode* root, vector<TreeNode*>& nodes)
+export void traversalTreeNode(TreeNode* root, vector<TreeNode*>& nodes)
 {
 
     if (root == NULL) {

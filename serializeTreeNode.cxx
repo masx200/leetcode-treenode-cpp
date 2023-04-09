@@ -22,12 +22,12 @@ export module leetcode_treenode_cpp.serializeTreeNode;
 // import <sstream>;
 // import <iostream>;
 import leetcode_treenode_cpp.TreeNode;
-export namespace leetcode_treenode_cpp
+/*export*/ namespace leetcode_treenode_cpp
 {
     using std::basic_stringstream;
     using std::string;
     using std::stringstream;
-    /* export */ string serializeTreeNode(TreeNode *root)
+     export  string serializeTreeNode(TreeNode *root)
     {
         ;
         stringstream sstream;

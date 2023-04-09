@@ -17,9 +17,9 @@ module;
 export module leetcode_treenode_cpp.freeTreeNode;
 import leetcode_treenode_cpp.TreeNode;
 
-export namespace leetcode_treenode_cpp
+/*export*/ namespace leetcode_treenode_cpp
 {
-    /*export*/ void freeTreeNode(TreeNode *root)
+    export void freeTreeNode(TreeNode *root)
     {
 
         if (root == NULL)

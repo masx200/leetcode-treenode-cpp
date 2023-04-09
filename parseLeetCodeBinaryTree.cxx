@@ -14,7 +14,7 @@ export module leetcode_treenode_cpp.parseLeetCodeBinaryTree;
 // import <queue>;
 import leetcode_treenode_cpp.TreeNode;
 import leetcode_treenode_cpp.freeTreeNode;
-export namespace leetcode_treenode_cpp {
+/*export*/ namespace leetcode_treenode_cpp {
 
 struct token {
     bool isDigit;
@@ -78,7 +78,7 @@ int tokenize(std::string& rawString, std::queue<token>& tokenQueue)
 // input format example: "[1,2,5,3,4,null,6]"
 // return status: 0: success, -1: parse error, -2: tree structure invalid
 // warning: this parser does not check the input format validity
-/*export*/ 
+export 
 int parseLeetCodeBinaryTree(std::string& rawString, TreeNode** pRoot)
 {
     *pRoot = nullptr;

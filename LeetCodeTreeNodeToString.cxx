@@ -24,12 +24,12 @@ import leetcode_treenode_cpp.TreeNode;
 // import <iterator>;
 import leetcode_treenode_cpp.bfsTravelsal;
 // import <iostream>;
-export namespace leetcode_treenode_cpp
+/*export*/ namespace leetcode_treenode_cpp
 {
 
     using std::basic_stringstream;
     using std::stringstream;
-    /*  export */ std::string LeetCodeTreeNodeToString(TreeNode *root)
+      export  std::string LeetCodeTreeNodeToString(TreeNode *root)
     {
         stringstream sstream;
         auto result = bfsTravelsal(root);
