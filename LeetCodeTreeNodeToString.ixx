@@ -1,21 +1,31 @@
 // +build ignore
-
-#pragma once
-#include <queue>
-#include <string>
-
-using namespace std;
-#include "TreeNode.hpp"
-#include "bfsTravelsal.hpp"
-
-#include <iostream>
-#include <iterator>
-#include <regex>
-#include <sstream>
+//
+// #pragma once
+// #include <queue>
+// #include <string>
+//
+// using namespace std;
+// #include "TreeNode.hpp"
+// #include "bfsTravelsal.hpp"
+//
+// #include <iostream>
+// #include <iterator>
+// #include <regex>
+// #include <sstream>
 
 // namespace test {
+export module leetcode_treenode_cpp.LeetCodeTreeNodeToString;
+import <string>;
+import leetcode_treenode_cpp.TreeNode;
+import <sstream>;
+import <regex>;
+import <iterator>;
+import leetcode_treenode_cpp.bfsTravelsal;
+import <iostream>;
+export namespace leetcode_treenode_cpp {
 
-std::string LeetCodeTreeNodeToString(TreeNode* root)
+using std::stringstream;
+export std::string LeetCodeTreeNodeToString(TreeNode* root)
 {
     stringstream sstream;
     auto result = bfsTravelsal(root);
@@ -25,4 +35,4 @@ std::string LeetCodeTreeNodeToString(TreeNode* root)
         result.end(), vowel_re, "]");
     return sstream.str();
 }
-//}
+}

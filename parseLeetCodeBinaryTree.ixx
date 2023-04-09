@@ -1,13 +1,20 @@
 // +build ignore
 
-#pragma once
-#include <queue>
-#include <string>
+// #pragma once
+// #include <queue>
+// #include <string>
+//
+// using namespace std;
+// #include "TreeNode.hpp"
+// #include "freeTreeNode.hpp"
+//// https://github.com/uniform641/treeparse/blob/master/treeParser.hpp
+export module leetcode_treenode_cpp.parseLeetCodeBinaryTree;
+import <string>;
+import <queue>;
+import leetcode_treenode_cpp.TreeNode;
+import leetcode_treenode_cpp.freeTreeNode;
+export namespace leetcode_treenode_cpp {
 
-using namespace std;
-#include "TreeNode.hpp"
-#include "freeTreeNode.hpp"
-// https://github.com/uniform641/treeparse/blob/master/treeParser.hpp
 struct token {
     bool isDigit;
     int digit;
@@ -70,7 +77,7 @@ int tokenize(std::string& rawString, std::queue<token>& tokenQueue)
 // input format example: "[1,2,5,3,4,null,6]"
 // return status: 0: success, -1: parse error, -2: tree structure invalid
 // warning: this parser does not check the input format validity
-int parseLeetCodeBinaryTree(std::string& rawString, TreeNode** pRoot)
+export int parseLeetCodeBinaryTree(std::string& rawString, TreeNode** pRoot)
 {
     *pRoot = nullptr;
     std::queue<token> tokenQueue;
@@ -117,4 +124,5 @@ int parseLeetCodeBinaryTree(std::string& rawString, TreeNode** pRoot)
     }
 
     return 0;
+}
 }
