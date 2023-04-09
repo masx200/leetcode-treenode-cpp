@@ -1,4 +1,9 @@
-// +build ignore
+module;
+#include <stdio.h>
+// #include<iostream>
+#include <sstream> //istringstream 必须包含这个头文件
+// #include<string>
+//  +build ignore
 
 // #pragma once
 
@@ -14,15 +19,16 @@
 
 export module leetcode_treenode_cpp.serializeTreeNode;
 import <string>;
-import <sstream>;
+// import <sstream>;
 import <iostream>;
 import leetcode_treenode_cpp.TreeNode;
 export namespace leetcode_treenode_cpp {
+using std::basic_stringstream;
 using std::string;
 using std::stringstream;
 export string serializeTreeNode(TreeNode* root)
 {
-
+    ;
     stringstream sstream;
     if (root == NULL) {
 

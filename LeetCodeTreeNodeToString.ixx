@@ -1,3 +1,5 @@
+module;
+#include <sstream>
 // +build ignore
 //
 // #pragma once
@@ -17,13 +19,14 @@
 export module leetcode_treenode_cpp.LeetCodeTreeNodeToString;
 import <string>;
 import leetcode_treenode_cpp.TreeNode;
-import <sstream>;
+// import <sstream>;
 import <regex>;
 import <iterator>;
 import leetcode_treenode_cpp.bfsTravelsal;
 import <iostream>;
 export namespace leetcode_treenode_cpp {
 
+using std::basic_stringstream;
 using std::stringstream;
 export std::string LeetCodeTreeNodeToString(TreeNode* root)
 {
