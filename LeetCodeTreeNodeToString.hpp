@@ -12,6 +12,9 @@ using namespace std;
 #include <iterator>
 #include <regex>
 #include <sstream>
+
+// namespace test {
+
 std::string LeetCodeTreeNodeToString(TreeNode* root)
 {
     stringstream sstream;
@@ -22,3 +25,4 @@ std::string LeetCodeTreeNodeToString(TreeNode* root)
         result.end(), vowel_re, "]");
     return sstream.str();
 }
+//}

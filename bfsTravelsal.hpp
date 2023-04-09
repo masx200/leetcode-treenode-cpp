@@ -4,6 +4,8 @@
 #include "TreeNode.hpp"
 #include <queue>
 #include <string>
+
+// namespace test{
 using namespace std;
 // https://github.com/uniform641/treeparse/blob/master/test.cpp
 std::string bfsTravelsal(TreeNode* root)
@@ -28,3 +30,4 @@ std::string bfsTravelsal(TreeNode* root)
     result[result.size() - 1] = ']';
     return result;
 }
+//}

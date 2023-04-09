@@ -25,6 +25,7 @@ using namespace std;
 // #include "printTreeNode.hpp"
 #include "parseLeetCodeBinaryTree.hpp"
 // #pragma comment( lib, "cppunit" )
+// using test::cout;
 void println(int s)
 {
     cout << s << endl;
