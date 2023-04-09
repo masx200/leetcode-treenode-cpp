@@ -1,1 +1,1 @@
-g++ -fmodules-ts -v ./test.cpp -l cppunit -o ./test.bin -I ./ ./*.ixx
+g++ -fmodules-ts -v ./*.cxx ./test.cpp -l cppunit -o ./test.bin -I ./ 
