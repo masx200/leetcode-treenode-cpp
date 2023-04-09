@@ -135,6 +135,11 @@
     <ClInclude Include="TreeNode.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="bfsTravelsal.ixx" />
+    <ClCompile Include="freeTreeNode.ixx" />
+    <ClCompile Include="LeetCodeTreeNodeToString.ixx" />
+    <ClCompile Include="parseLeetCodeBinaryTree.ixx" />
+    <ClCompile Include="serializeTreeNode.ixx" />
     <ClCompile Include="test.cpp" />
     <ClCompile Include="traversalTreeNode.ixx" />
     <ClCompile Include="TreeNode.ixx" />

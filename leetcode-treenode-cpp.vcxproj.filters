@@ -40,5 +40,10 @@
     </ClCompile>
     <ClCompile Include="TreeNode.ixx" />
     <ClCompile Include="traversalTreeNode.ixx" />
+    <ClCompile Include="bfsTravelsal.ixx" />
+    <ClCompile Include="freeTreeNode.ixx" />
+    <ClCompile Include="LeetCodeTreeNodeToString.ixx" />
+    <ClCompile Include="parseLeetCodeBinaryTree.ixx" />
+    <ClCompile Include="serializeTreeNode.ixx" />
   </ItemGroup>
 </Project>
