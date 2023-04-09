@@ -34,3 +34,4 @@ x64
 *.bin
 *.json
 *.pdb
+enc_temp_folder
