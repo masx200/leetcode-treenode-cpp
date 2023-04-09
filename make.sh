@@ -1,1 +1,1 @@
-g++ ./test.cpp -l cppunit -o ./test.bin -I ./ -v
+g++ ./test.cpp -l cppunit -o ./test.bin -I ./ -v -fmodules-ts
