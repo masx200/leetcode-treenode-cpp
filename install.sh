@@ -9,7 +9,7 @@ cd vcpkg
  
  
  ~/vcpkg/vcpkg integrate install
- 
+  ~/vcpkg/vcpkg integrate bash
  ~/vcpkg/vcpkg install  cppunit
  
  
