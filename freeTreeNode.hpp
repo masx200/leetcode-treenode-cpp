@@ -1,28 +1,42 @@
+
+/*** Start of inlined file: bfsTravelsal.hpp ***/
 // +build ignore
 
 #pragma once
-
-// #ifndef _serialize_Tree_Node_
-// #define _serialize_Tree_Node_
-#include "TreeNode.hpp"
-#include <iostream>
-#include <stdio.h>
+TreeNode.hpp"
+#include <queue>
 #include <string>
-
-#include <sstream>
 using namespace std;
-void freeTreeNode(TreeNode* root)
+// https://github.com/uniform641/treeparse/blob/master/test.cpp
+std::string bfsTravelsal(TreeNode* root)
 {
-
-    if (root == NULL) {
-
-        return;
-    }
-
-    freeTreeNode(root->left);
-    freeTreeNode(root->right);
-    delete root;
-    // cout << "freeTreeNode:" << root << endl;
-    return;
+	std::string result = "[";
+	std::queue<TreeNode*> nodeQueue;
+	nodeQueue.push(root);
+	while (!nodeQueue.empty()) {
+		TreeNode* node = nodeQueue.front();
+		nodeQueue.pop();
+		if (node == nullptr) {
+			result += "null,";
+		} else {
+			result += std::to_string(node->val) + ",";
+			nodeQueue.push(node->left);
+			nodeQueue.push(node->right);
+		}
+	}
+	if (result == std::string("[null,")) {
+		return "[]";
+	}
+	result[result.size() - 1] = ']';
+	return result;
 }
-// #endif //
+
+/*** End of inlined file: bfsTravelsal.hpp ***/
+
+freeTreeNode.hpp"
+LeetCodeTreeNodeToString.hpp"
+parseLeetCodeBinaryTree.hpp"
+serializeTreeNode.hpp"
+traversalTreeNode.hpp"
+TreeNode.hpp"
+
