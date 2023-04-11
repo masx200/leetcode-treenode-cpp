@@ -11,7 +11,7 @@ export struct TreeNode {
         , right(nullptr)
     {
     }
-    TreeNode(int x)
+    explicit TreeNode(int x)
         : val(x)
         , left(nullptr)
         , right(nullptr)

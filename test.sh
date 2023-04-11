@@ -1,2 +1,2 @@
-chmod +x ./test.bin
+chmod +x "./test.bin"
 ./test.bin

@@ -1,5 +1,4 @@
 module;
-#include <stdlib.h>
 
 export module leetcode_treenode_cpp.freeTreeNode;
 import leetcode_treenode_cpp.TreeNode;
@@ -9,7 +8,7 @@ namespace leetcode_treenode_cpp
     export void freeTreeNode(TreeNode *root)
     {
 
-        if (root == NULL)
+        if (root == nullptr)
         {
 
             return;
@@ -18,8 +17,6 @@ namespace leetcode_treenode_cpp
         freeTreeNode(root->left);
         freeTreeNode(root->right);
         delete root;
-
-        return;
-    }
+   }
 
 }

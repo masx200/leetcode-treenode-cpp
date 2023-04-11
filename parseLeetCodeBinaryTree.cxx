@@ -40,7 +40,7 @@ namespace leetcode_treenode_cpp
             else if (rawString[i] == ',')
             {
                 if (digitFlag)
-                    tokenQueue.push(token{true, digit * sign});
+                    tokenQueue.emplace(true, digit * sign);
                 digit = 0;
                 digitFlag = false;
                 sign = 1;
@@ -57,14 +57,14 @@ namespace leetcode_treenode_cpp
             {
                 if (digitFlag)
                 {
-                    tokenQueue.push(token{true, digit * sign});
+                    tokenQueue.emplace(true, digit * sign);
                 }
                 continue;
             }
             else if (rawString[i] == 'n' && static_cast<unsigned long long>(i) + 3 < rawString.size() && rawString[static_cast<std::basic_string<char, std::char_traits<char>, std::allocator<char>>::size_type>(i) + 1] == 'u' && rawString[static_cast<std::basic_string<char, std::char_traits<char>, std::allocator<char>>::size_type>(i) + 2] == 'l' && rawString[static_cast<std::basic_string<char, std::char_traits<char>, std::allocator<char>>::size_type>(i) + 2] == 'l')
             {
                 i += 3;
-                tokenQueue.push(token{false, 0});
+                tokenQueue.emplace(false, 0);
             }
             else
             {

@@ -1,7 +1,6 @@
 module;
 #include <iostream>
 #include <sstream>
-#include <stdio.h>
 #include <string>
 
 export module leetcode_treenode_cpp.serializeTreeNode;
@@ -14,9 +13,9 @@ namespace leetcode_treenode_cpp
     using std::stringstream;
     export string serializeTreeNode(TreeNode *root)
     {
-        ;
+
         stringstream sstream;
-        if (root == NULL)
+        if (root == nullptr)
         {
 
             sstream

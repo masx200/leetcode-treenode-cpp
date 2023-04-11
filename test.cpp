@@ -6,11 +6,7 @@
 #include <cppunit/TextOutputter.h>
 #include <cppunit/extensions/HelperMacros.h>
 #include <iostream>
-#include <stdio.h>
 #include <string>
-#include <vector>
-
-#include <sstream>
 #include <unordered_set>
 
 import leetcode_treenode_cpp.TreeNode;
@@ -18,42 +14,29 @@ import leetcode_treenode_cpp.parseLeetCodeBinaryTree;
 import leetcode_treenode_cpp.LeetCodeTreeNodeToString;
 import leetcode_treenode_cpp.freeTreeNode;
 import leetcode_treenode_cpp.serializeTreeNode;
+
 using namespace std;
 using namespace leetcode_treenode_cpp;
 
-void println(int s)
-{
-
+void println(const string& s) {
     cout << s << endl;
 }
 
-void println(string s)
-{
-    cout << s << endl;
-}
+class StringTest : public CppUnit::TestFixture {
+CPPUNIT_TEST_SUITE(StringTest);
 
-void assertEquals(string s1, string s2)
-{
-    CPPUNIT_ASSERT_EQUAL(s1, s2);
-}
+        CPPUNIT_TEST(test3);
 
-class StringTest : public CppUnit::TestFixture
-{
-    CPPUNIT_TEST_SUITE(StringTest);
-
-    CPPUNIT_TEST(test3);
-
-    CPPUNIT_TEST(test5);
-    CPPUNIT_TEST(test6);
+        CPPUNIT_TEST(test5);
+        CPPUNIT_TEST(test6);
     CPPUNIT_TEST_SUITE_END();
 
 public:
-    void setUp() {}
+    void setUp() override {}
 
-    void tearDown() {}
+    void tearDown() override {}
 
-    void test3()
-    {
+    static void test3() {
         println("test3 start");
         auto rawString = string("[4,2,7,1,3]");
 
@@ -65,15 +48,16 @@ public:
         CPPUNIT_ASSERT_EQUAL(result, rawString);
         println(result);
 
-        auto serialized = string("TreeNode{val:4,left:TreeNode{val:2,left:TreeNode{val:1,left:null,right:null},right:TreeNode{val:3,left:null,right:null}},right:TreeNode{val:7,left:null,right:null}}");
+        auto serialized = string(
+                "TreeNode{val:4,left:TreeNode{val:2,left:TreeNode{val:1,left:null,right:null},right:TreeNode{val:3,left:null,right:null}},right:TreeNode{val:7,left:null,right:null}}");
         println(serialized);
         CPPUNIT_ASSERT_EQUAL(serializeTreeNode(root),
                              serialized);
         freeTreeNode(root);
         println("test3 end");
     }
-    void test5()
-    {
+
+    static void test5() {
         println("test5 start");
         auto rawString = string("[-4,-2,-7,-1,-3]");
 
@@ -85,15 +69,16 @@ public:
         CPPUNIT_ASSERT_EQUAL(result, rawString);
         println(result);
 
-        auto serialized = string("TreeNode{val:-4,left:TreeNode{val:-2,left:TreeNode{val:-1,left:null,right:null},right:TreeNode{val:-3,left:null,right:null}},right:TreeNode{val:-7,left:null,right:null}}");
+        auto serialized = string(
+                "TreeNode{val:-4,left:TreeNode{val:-2,left:TreeNode{val:-1,left:null,right:null},right:TreeNode{val:-3,left:null,right:null}},right:TreeNode{val:-7,left:null,right:null}}");
         CPPUNIT_ASSERT_EQUAL(serializeTreeNode(root),
                              serialized);
         println(serialized);
         freeTreeNode(root);
         println("test5 end");
     }
-    void test6()
-    {
+
+    static void test6() {
         println("test6 start");
         auto rawString = string("[1,null,-4,-2,-7,-1,-3]");
 
@@ -105,7 +90,8 @@ public:
         CPPUNIT_ASSERT_EQUAL(result, rawString);
         println(result);
         println(serializeTreeNode(root));
-        auto serialized = string("TreeNode{val:1,left:null,right:TreeNode{val:-4,left:TreeNode{val:-2,left:TreeNode{val:-1,left:null,right:null},right:TreeNode{val:-3,left:null,right:null}},right:TreeNode{val:-7,left:null,right:null}}}");
+        auto serialized = string(
+                "TreeNode{val:1,left:null,right:TreeNode{val:-4,left:TreeNode{val:-2,left:TreeNode{val:-1,left:null,right:null},right:TreeNode{val:-3,left:null,right:null}},right:TreeNode{val:-7,left:null,right:null}}}");
         CPPUNIT_ASSERT_EQUAL(serializeTreeNode(root),
                              serialized);
 
@@ -116,8 +102,7 @@ public:
 
 CPPUNIT_TEST_SUITE_REGISTRATION(StringTest);
 
-int main(int argc, char *argv[])
-{
+int main(int argc, char *argv[]) {
     CppUnit::TestResult r;
     CppUnit::TestResultCollector rc;
     r.addListener(&rc);

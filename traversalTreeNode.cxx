@@ -1,5 +1,4 @@
 module;
-#include <cstddef>
 #include <vector>
 export module leetcode_treenode_cpp.traversalTreeNode;
 
@@ -10,7 +9,7 @@ using std::vector;
 export void traversalTreeNode(TreeNode* root, vector<TreeNode*>& nodes)
 {
 
-    if (root == NULL) {
+    if (root == nullptr) {
 
         return;
     }
@@ -19,7 +18,6 @@ export void traversalTreeNode(TreeNode* root, vector<TreeNode*>& nodes)
     traversalTreeNode(root->right, nodes);
 
     nodes.emplace_back(root);
-    return;
 }
 
 }

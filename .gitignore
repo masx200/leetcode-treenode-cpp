@@ -6,16 +6,16 @@
 *.lo
 *.o
 *.obj
-
+CMakeLists.txt
 # Precompiled Headers
 *.gch
 *.pch
-
+cmake-build-debug
 # Compiled Dynamic libraries
 *.so
 *.dylib
 *.dll
-
+.idea
 # Fortran module files
 *.mod
 *.smod
