@@ -36,3 +36,5 @@ x64
 *.jso
 *.pdb
 *.ifc
+build
+.xmake
