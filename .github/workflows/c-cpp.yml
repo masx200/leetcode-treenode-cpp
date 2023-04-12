@@ -25,7 +25,9 @@ jobs:
                   ~/vcpkg/vcpkg install  cppunit
                   sudo add-apt-repository -y ppa:xmake-io/xmake
                   sudo apt update
-                  sudo apt install -y xmake
+                  sudo apt install -y xmake gcc-12
+                  sudo rm -fv /usr/bin/gcc
+                  sudo ln -s /usr/bin/gcc-12 /usr/bin/gcc
             - name: make
               run: xmake build -vy
             - name: test
