@@ -27,6 +27,6 @@ jobs:
                   sudo apt update
                   sudo apt install -y xmake
             - name: make
-              run: xmake build -v
+              run: xmake build -vy
             - name: test
               run: xmake run -v
