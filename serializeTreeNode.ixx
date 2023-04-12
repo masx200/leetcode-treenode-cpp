@@ -8,7 +8,7 @@ export module leetcode_treenode_cpp.serializeTreeNode;
 import leetcode_treenode_cpp.TreeNode;
 namespace leetcode_treenode_cpp
 {
-    using std::basic_stringstream;
+    //using std::basic_stringstream;
     using std::string;
     using std::stringstream;
     export string serializeTreeNode(TreeNode *root)
