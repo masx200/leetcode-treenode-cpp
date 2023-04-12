@@ -29,10 +29,12 @@ jobs:
                   sudo apt install -y  clang-15
                   sudo rm -fv /usr/bin/clang
                   sudo ln -s /usr/bin/clang-15 /usr/bin/clang
-            - name: make
-              run: |
-                  xmake require   vcpkg::cppunit
-                  xmake f --toolchain=clang
-                  xmake build -y
+            - name: make1
+              run: xmake require   vcpkg::cppunit
+                 
+            - name: make2
+              run:  xmake f --toolchain=clang
+            - name: make3
+              run:  xmake build -y
             - name: test
               run: xmake run -v
