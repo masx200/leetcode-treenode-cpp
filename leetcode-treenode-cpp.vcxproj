@@ -127,14 +127,14 @@
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="bfsTravelsal.cxx" />
-    <ClCompile Include="freeTreeNode.cxx" />
-    <ClCompile Include="LeetCodeTreeNodeToString.cxx" />
-    <ClCompile Include="parseLeetCodeBinaryTree.cxx" />
-    <ClCompile Include="serializeTreeNode.cxx" />
+    <ClCompile Include="bfsTravelsal.ixx" />
+    <ClCompile Include="freeTreeNode.ixx" />
+    <ClCompile Include="LeetCodeTreeNodeToString.ixx" />
+    <ClCompile Include="parseLeetCodeBinaryTree.ixx" />
+    <ClCompile Include="serializeTreeNode.ixx" />
     <ClCompile Include="test.cpp" />
-    <ClCompile Include="traversalTreeNode.cxx" />
-    <ClCompile Include="TreeNode.cxx" />
+    <ClCompile Include="traversalTreeNode.ixx" />
+    <ClCompile Include="TreeNode.ixx" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
