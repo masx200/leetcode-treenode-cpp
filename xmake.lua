@@ -3,12 +3,20 @@ add_requires("vcpkg::cppunit")
 set_languages("c17", "cxx20")
 set_project("leetcode-treenode-cpp")
 target("leetcode-treenode-cpp")
-    --set_toolchains("msvc","clang")
-    set_kind("binary")
-    add_files("*.cpp")
-    add_files("*.ixx")
-    add_packages("vcpkg::cppunit")
-
+-- set_toolchains("msvc","clang")
+set_kind("static")
+-- add_files("*.cpp")
+add_files("*.ixx")
+-- add_packages("vcpkg::cppunit")
+target_end()
+target("test")
+-- set_toolchains("msvc","clang")
+set_kind("binary")
+add_files("*.cpp")
+-- add_files("*.ixx")
+add_packages("vcpkg::cppunit")
+add_deps('leetcode-treenode-cpp')
+target_end()
 --
 -- If you want to known more usage about xmake, please see https://xmake.io
 --
@@ -77,4 +85,3 @@ target("leetcode-treenode-cpp")
 --
 -- @endcode
 --
-
