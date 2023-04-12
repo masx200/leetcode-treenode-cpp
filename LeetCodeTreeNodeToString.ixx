@@ -27,5 +27,5 @@ namespace leetcode_treenode_cpp
         std::regex_replace(std::ostreambuf_iterator<char>(sstream), result.begin(),
                            result.end(), vowel_re, "]");
         return sstream.str();
-    }
-}
+    };
+};
