@@ -28,6 +28,9 @@ jobs:
                   sudo apt install -y xmake gcc-12
                   sudo rm -fv /usr/bin/gcc
                   sudo ln -s /usr/bin/gcc-12 /usr/bin/gcc
+                  sudo apt install -y  g++-12
+                  sudo rm -fv /usr/bin/g++
+                  sudo ln -s /usr/bin/g++-12 /usr/bin/g++
             - name: make
               run: xmake build -vy
             - name: test
