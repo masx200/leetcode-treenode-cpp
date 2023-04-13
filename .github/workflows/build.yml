@@ -50,8 +50,8 @@ jobs:
 
                   ~/vcpkg/vcpkg integrate bash
 
-                  ~/vcpkg/vcpkg install  cppunit
-
+                  
+                   cd ~
                    bash <(curl -fsSL https://xmake.io/shget.text)       
 
     - name: make
