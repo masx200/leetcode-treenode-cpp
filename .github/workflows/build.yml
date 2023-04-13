@@ -57,6 +57,7 @@ jobs:
                  #  bash <(curl -fsSL https://xmake.io/shget.text)   
                  clang --version
                  which clang
+                 /usr/bin/clang --version
 
     - name: make
 
