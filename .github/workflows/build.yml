@@ -55,9 +55,14 @@ jobs:
                   
                    #cd ~
                  #  bash <(curl -fsSL https://xmake.io/shget.text)   
-                 clang --version
-                 which clang
+                 export LDFLAGS="-L/usr/local/opt/llvm/lib"
+
+                 export CPPFLAGS="-I/usr/local/opt/llvm/include"
+                 
+                 echo 'export PATH="/usr/local/opt/llvm/bin:$PATH"' >> /Users/runner/.bash_profile
+                 
                  /usr/bin/clang --version
+                 /usr/local/opt/llvm/bin/clang --version
 
     - name: make
 
