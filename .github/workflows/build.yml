@@ -65,12 +65,11 @@ jobs:
                  /usr/local/opt/llvm/bin/clang --version
                  /usr/local/share/vcpkg/vcpkg install cppunit:x64-osx
 
-    - name: make
+    - name: make1
 
-      run: |
-           xmake f --toolchain=llvm --sdk=/usr/local/opt/llvm/
-           
-           xmake build -v -y
+      run: xmake f --toolchain=llvm --sdk=/usr/local/opt/llvm/
+    - name: make2       
+      run:     xmake build -v -y
            
 
     - name: test
