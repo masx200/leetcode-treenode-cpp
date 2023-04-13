@@ -54,7 +54,9 @@ jobs:
 
                   
                    #cd ~
-                 #  bash <(curl -fsSL https://xmake.io/shget.text)       
+                 #  bash <(curl -fsSL https://xmake.io/shget.text)   
+                 clang --version
+                 which clang
 
     - name: make
 
