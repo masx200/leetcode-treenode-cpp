@@ -7,19 +7,19 @@ export struct TreeNode {
     int val = 0;
     TreeNode* left = nullptr;
     TreeNode* right = nullptr;
-    TreeNode()
+    /*TreeNode()
         : val(0)
         , left(nullptr)
         , right(nullptr)
     {
     }
-    explicit TreeNode(int x)
+    TreeNode(int x)
         : val(x)
         , left(nullptr)
         , right(nullptr)
     {
-    }
-    TreeNode(int x, TreeNode* left, TreeNode* right)
+    }*/
+    TreeNode(int x=0, TreeNode* left=nullptr, TreeNode* right=nullptr)
         : val(x)
         , left(left)
         , right(right)
