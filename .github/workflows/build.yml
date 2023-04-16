@@ -67,7 +67,7 @@ jobs:
 
     - name: make1
 
-      run: xmake f --toolchain=llvm --sdk=/usr/local/opt/llvm/ -y
+      run: xmake f --toolchain=llvm --sdk=/usr/local/opt/llvm/ -y -v
     - name: make2       
       run:     xmake build -v -y
            
