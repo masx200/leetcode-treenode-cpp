@@ -11,7 +11,7 @@ project(leetcode-treenode-cpp VERSION 1.1.4 LANGUAGES CXX C)
 add_library(leetcode-treenode-cpp STATIC "")
 set_target_properties(leetcode-treenode-cpp PROPERTIES OUTPUT_NAME "leetcode-treenode-cpp")
 set_target_properties(leetcode-treenode-cpp PROPERTIES ARCHIVE_OUTPUT_DIRECTORY "${CMAKE_SOURCE_DIR}/build/windows/x86/release")
-add_custom_command(OUTPUT output_leetcode-treenode-cpp_87EDB209
+add_custom_command(OUTPUT output_leetcode-treenode-cpp_291F8F35
     COMMAND echo [  0%]: compiling.module.release leetcode_treenode_cpp.TreeNode
     COMMAND ${CMAKE_COMMAND} -E make_directory ${CMAKE_SOURCE_DIR}/build/.objs/leetcode-treenode-cpp/windows/x86/release
     COMMAND "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.35.32215/bin/HostX86/x86/cl.exe" -nologo -O2 -fp:fast -std:c++20 /EHsc -experimental:module -DNDEBUG -TP -c ${CMAKE_SOURCE_DIR}/TreeNode.ixx -Fo${CMAKE_SOURCE_DIR}/build/.objs/leetcode-treenode-cpp/windows/x86/release/TreeNode.ixx.obj -ifcOutput ${CMAKE_SOURCE_DIR}/build/.gens/leetcode-treenode-cpp/windows/x86/release/rules/modules/cache/ec4a91a6/leetcode_treenode_cpp.TreeNode.ifc -interface
@@ -35,10 +35,10 @@ add_custom_command(OUTPUT output_leetcode-treenode-cpp_87EDB209
     COMMAND "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.35.32215/bin/HostX86/x86/cl.exe" -nologo -O2 -fp:fast -std:c++20 /EHsc -experimental:module -DNDEBUG -TP -c ${CMAKE_SOURCE_DIR}/LeetCodeTreeNodeToString.mpp -Fo${CMAKE_SOURCE_DIR}/build/.objs/leetcode-treenode-cpp/windows/x86/release/LeetCodeTreeNodeToString.mpp.obj -ifcOutput ${CMAKE_SOURCE_DIR}/build/.gens/leetcode-treenode-cpp/windows/x86/release/rules/modules/cache/ec4a91a6/leetcode_treenode_cpp.LeetCodeTreeNodeToString.ifc -interface -reference leetcode_treenode_cpp.TreeNode=${CMAKE_SOURCE_DIR}/build/.gens/leetcode-treenode-cpp/windows/x86/release/rules/modules/cache/ec4a91a6/leetcode_treenode_cpp.TreeNode.ifc -reference leetcode_treenode_cpp.bfsTravelsal=${CMAKE_SOURCE_DIR}/build/.gens/leetcode-treenode-cpp/windows/x86/release/rules/modules/cache/ec4a91a6/leetcode_treenode_cpp.bfsTravelsal.ifc
     VERBATIM
 )
-add_custom_target(target_leetcode-treenode-cpp_87EDB209
-    DEPENDS output_leetcode-treenode-cpp_87EDB209
+add_custom_target(target_leetcode-treenode-cpp_291F8F35
+    DEPENDS output_leetcode-treenode-cpp_291F8F35
 )
-add_dependencies(leetcode-treenode-cpp target_leetcode-treenode-cpp_87EDB209)
+add_dependencies(leetcode-treenode-cpp target_leetcode-treenode-cpp_291F8F35)
 target_compile_options(leetcode-treenode-cpp PRIVATE
     $<$<COMPILE_LANGUAGE:C>:-DNDEBUG>
     $<$<COMPILE_LANGUAGE:CXX>:-DNDEBUG>
