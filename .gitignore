@@ -6,7 +6,7 @@
 *.lo
 *.o
 *.obj
-CMakeLists.txt
+#CMakeLists.txt
 # Precompiled Headers
 *.gch
 *.pch
