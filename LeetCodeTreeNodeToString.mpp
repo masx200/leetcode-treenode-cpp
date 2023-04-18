@@ -13,11 +13,11 @@ import leetcode_treenode_cpp.TreeNode;
 
 import leetcode_treenode_cpp.bfsTravelsal;
 
-export
+
 namespace leetcode_treenode_cpp
 {
 
-
+export
     auto LeetCodeTreeNodeToString(TreeNode *root)->std::string
     {  
     
