@@ -16,7 +16,7 @@ set_kind("binary")
 add_files("*.cpp")
 -- add_files("*.ixx")
 add_packages("vcpkg::cppunit")
-add_deps('leetcode-treenode-cpp')
+add_deps("leetcode-treenode-cpp")
 target_end()
 --
 -- If you want to known more usage about xmake, please see https://xmake.io

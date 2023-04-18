@@ -39,3 +39,4 @@ x64
 build
 .xmake
 *.swo
+compile_commands.json
