@@ -24,9 +24,6 @@
     <ClCompile Include="freeTreeNode.ixx">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="LeetCodeTreeNodeToString.ixx">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="parseLeetCodeBinaryTree.ixx">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -37,6 +34,11 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="TreeNode.ixx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="LeetCodeTreeNodeToString.mpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
