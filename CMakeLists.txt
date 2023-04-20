@@ -8,7 +8,7 @@ cmake_policy(SET CMP0091 NEW)
 project(leetcode-treenode-cpp VERSION 1.1.4 LANGUAGES CXX C)
 
 # target
-add_library(leetcode-treenode-cpp STATIC "")
+add_library(leetcode-treenode-cpp STATIC "" TreeNode.ixx test.cpp LeetCodeTreeNodeToString.mpp bfsTravelsal.ixx freeTreeNode.ixx parseLeetCodeBinaryTree.ixx serializeTreeNode.ixx traversalTreeNode.ixx)
 set_target_properties(leetcode-treenode-cpp PROPERTIES OUTPUT_NAME "leetcode-treenode-cpp")
 set_target_properties(leetcode-treenode-cpp PROPERTIES ARCHIVE_OUTPUT_DIRECTORY "${CMAKE_SOURCE_DIR}/build/windows/x86/release")
 add_custom_command(OUTPUT output_leetcode-treenode-cpp_BEE6E6CE

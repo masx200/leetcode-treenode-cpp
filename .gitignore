@@ -40,3 +40,4 @@ build
 .xmake
 *.swo
 compile_commands.json
+.cache
