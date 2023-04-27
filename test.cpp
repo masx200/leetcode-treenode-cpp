@@ -7,7 +7,6 @@
 #include <cppunit/extensions/HelperMacros.h>
 #include <iostream>
 #include <string>
-#include <unordered_set>
 
 import leetcode_treenode_cpp.TreeNode;
 import leetcode_treenode_cpp.parseLeetCodeBinaryTree;
