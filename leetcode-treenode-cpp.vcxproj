@@ -136,7 +136,7 @@
     <ClCompile Include="TreeNode.ixx" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="LeetCodeTreeNodeToString.mpp" />
+    <ClCompile Include="LeetCodeTreeNodeToString.ixx" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

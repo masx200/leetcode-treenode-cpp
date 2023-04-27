@@ -38,7 +38,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="LeetCodeTreeNodeToString.mpp">
+    <ClCompile Include="LeetCodeTreeNodeToString.ixx">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
