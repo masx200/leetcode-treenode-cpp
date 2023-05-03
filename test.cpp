@@ -17,29 +17,31 @@ import leetcode_treenode_cpp.serializeTreeNode;
 using namespace std;
 using namespace leetcode_treenode_cpp;
 
-void println(const string& s) {
+void println(const string& s)
+{
     cout << s << endl;
 }
 
 class StringTest : public CppUnit::TestFixture {
-CPPUNIT_TEST_SUITE(StringTest);
+    CPPUNIT_TEST_SUITE(StringTest);
 
-        CPPUNIT_TEST(test3);
+    CPPUNIT_TEST(test3);
 
-        CPPUNIT_TEST(test5);
-        CPPUNIT_TEST(test6);
+    CPPUNIT_TEST(test5);
+    CPPUNIT_TEST(test6);
     CPPUNIT_TEST_SUITE_END();
 
 public:
-    void setUp() override {}
+    void setUp() override { }
 
-    void tearDown() override {}
+    void tearDown() override { }
 
-    static void test3() {
+    static void test3()
+    {
         println("test3 start");
         auto rawString = string("[4,2,7,1,3]");
 
-        TreeNode *root = nullptr;
+        TreeNode* root = nullptr;
         int status = parseLeetCodeBinaryTree(rawString, &root);
         CPPUNIT_ASSERT_EQUAL(0, status);
 
@@ -48,19 +50,20 @@ public:
         println(result);
 
         auto serialized = string(
-                "TreeNode{val:4,left:TreeNode{val:2,left:TreeNode{val:1,left:null,right:null},right:TreeNode{val:3,left:null,right:null}},right:TreeNode{val:7,left:null,right:null}}");
+            "TreeNode{val:4,left:TreeNode{val:2,left:TreeNode{val:1,left:null,right:null},right:TreeNode{val:3,left:null,right:null}},right:TreeNode{val:7,left:null,right:null}}");
         println(serialized);
         CPPUNIT_ASSERT_EQUAL(serializeTreeNode(root),
-                             serialized);
+            serialized);
         freeTreeNode(root);
         println("test3 end");
     }
 
-    static void test5() {
+    static void test5()
+    {
         println("test5 start");
         auto rawString = string("[-4,-2,-7,-1,-3]");
 
-        TreeNode *root = nullptr;
+        TreeNode* root = nullptr;
         int status = parseLeetCodeBinaryTree(rawString, &root);
         CPPUNIT_ASSERT_EQUAL(0, status);
 
@@ -69,19 +72,20 @@ public:
         println(result);
 
         auto serialized = string(
-                "TreeNode{val:-4,left:TreeNode{val:-2,left:TreeNode{val:-1,left:null,right:null},right:TreeNode{val:-3,left:null,right:null}},right:TreeNode{val:-7,left:null,right:null}}");
+            "TreeNode{val:-4,left:TreeNode{val:-2,left:TreeNode{val:-1,left:null,right:null},right:TreeNode{val:-3,left:null,right:null}},right:TreeNode{val:-7,left:null,right:null}}");
         CPPUNIT_ASSERT_EQUAL(serializeTreeNode(root),
-                             serialized);
+            serialized);
         println(serialized);
         freeTreeNode(root);
         println("test5 end");
     }
 
-    static void test6() {
+    static void test6()
+    {
         println("test6 start");
         auto rawString = string("[1,null,-4,-2,-7,-1,-3]");
 
-        TreeNode *root = nullptr;
+        TreeNode* root = nullptr;
         int status = parseLeetCodeBinaryTree(rawString, &root);
         CPPUNIT_ASSERT_EQUAL(0, status);
 
@@ -90,9 +94,9 @@ public:
         println(result);
         println(serializeTreeNode(root));
         auto serialized = string(
-                "TreeNode{val:1,left:null,right:TreeNode{val:-4,left:TreeNode{val:-2,left:TreeNode{val:-1,left:null,right:null},right:TreeNode{val:-3,left:null,right:null}},right:TreeNode{val:-7,left:null,right:null}}}");
+            "TreeNode{val:1,left:null,right:TreeNode{val:-4,left:TreeNode{val:-2,left:TreeNode{val:-1,left:null,right:null},right:TreeNode{val:-3,left:null,right:null}},right:TreeNode{val:-7,left:null,right:null}}}");
         CPPUNIT_ASSERT_EQUAL(serializeTreeNode(root),
-                             serialized);
+            serialized);
 
         freeTreeNode(root);
         println("test6 end");
@@ -101,7 +105,8 @@ public:
 
 CPPUNIT_TEST_SUITE_REGISTRATION(StringTest);
 
-int main(int argc, char *argv[]) {
+int main(int argc, char* argv[])
+{
     CppUnit::TestResult r;
     CppUnit::TestResultCollector rc;
     r.addListener(&rc);
