@@ -29,7 +29,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    
+    - name: vcpkg-action
+
+      uses: johnwason/vcpkg-action@v4
     - uses: xmake-io/github-action-setup-xmake@v1
       with:
        xmake-version: latest
@@ -44,17 +46,17 @@ jobs:
             brew install xmake
             brew install libtool automake
 
-                  cd ~
+                  #cd ~
 
-                  git clone https://gitcode.net/mirrors/microsoft/vcpkg
+                  #git clone https://gitcode.net/mirrors/microsoft/vcpkg
 
-                  cd vcpkg
+                  #cd vcpkg
 
-                  sh bootstrap-vcpkg.sh
+                  #sh bootstrap-vcpkg.sh
 
-                  ~/vcpkg/vcpkg integrate install
+                  #~/vcpkg/vcpkg integrate install
 
-                  ~/vcpkg/vcpkg integrate bash
+                  #~/vcpkg/vcpkg integrate bash
 
                   
                    #cd ~
@@ -65,9 +67,10 @@ jobs:
                  
                  echo 'export PATH="/usr/local/opt/llvm/bin:$PATH"' >> /Users/runner/.bash_profile
                  
-                 /usr/bin/clang --version
-                 /usr/local/opt/llvm/bin/clang --version
-                 /usr/local/share/vcpkg/vcpkg install cppunit:x64-osx
+                 #/usr/bin/clang --version
+                 #/usr/local/opt/llvm/bin/clang --version
+                 #/usr/local/share/vcpkg/
+                 vcpkg install cppunit:x64-osx
 
     - name: make1
 
