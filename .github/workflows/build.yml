@@ -29,27 +29,14 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: vcpkg-action
-
-      uses: johnwason/vcpkg-action@v4
-      with:
-             triplet: x64-osx-release
-             pkgs: 'gtest cppunit'
-
-             token: ${{ github.token }}
-             
-    - uses: xmake-io/github-action-setup-xmake@v1
-      with:
-       xmake-version: latest
-       actions-cache-folder: '.xmake-cache'
-    
-
     - name: install
 
       run: |
+
             brew install llvm@16
 
             brew install xmake
+
             brew install libtool automake
 
                   #cd ~
@@ -65,19 +52,44 @@ jobs:
                   #~/vcpkg/vcpkg integrate bash
 
                   
+
                    #cd ~
+
                  #  bash <(curl -fsSL https://xmake.io/shget.text)   
+
                  export LDFLAGS="-L/usr/local/opt/llvm/lib"
 
                  export CPPFLAGS="-I/usr/local/opt/llvm/include"
-                 
-                 echo 'export PATH="/usr/local/opt/llvm/bin:$PATH"' >> /Users/runner/.bash_profile
-                 
-                 #/usr/bin/clang --version
-                 #/usr/local/opt/llvm/bin/clang --version
-                 #/usr/local/share/vcpkg/
-                 vcpkg install cppunit:x64-osx
 
+                 
+
+                 echo 'export PATH="/usr/local/opt/llvm/bin:$PATH"' >> /Users/runner/.bash_profile
+
+                 
+
+                 #/usr/bin/clang --version
+
+                 #/usr/local/opt/llvm/bin/clang --version
+
+                 #/usr/local/share/vcpkg/
+
+                 #vcpkg install cppunit:x64-osx
+    - name: vcpkg-action
+
+      uses: johnwason/vcpkg-action@v4
+      with:
+             triplet: x64-osx-release
+             pkgs: 'gtest cppunit'
+
+             token: ${{ github.token }}
+             
+    - uses: xmake-io/github-action-setup-xmake@v1
+      with:
+       xmake-version: latest
+       actions-cache-folder: '.xmake-cache'
+    
+
+    
     - name: make1
 
       run: xmake f --toolchain=llvm --sdk=/usr/local/opt/llvm/ -y -v
