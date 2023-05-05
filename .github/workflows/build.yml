@@ -33,8 +33,9 @@ jobs:
 
       uses: johnwason/vcpkg-action@v4
       with:
+             triplet: x64-osx-release
 
-                   token: ${{ github.token }}
+             token: ${{ github.token }}
     - uses: xmake-io/github-action-setup-xmake@v1
       with:
        xmake-version: latest
