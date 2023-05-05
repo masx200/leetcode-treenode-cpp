@@ -34,7 +34,7 @@ jobs:
       uses: johnwason/vcpkg-action@v4
       with:
              triplet: x64-osx-release
-             pkgs: ''
+             pkgs: 'gtest cppunit'
 
              token: ${{ github.token }}
              
