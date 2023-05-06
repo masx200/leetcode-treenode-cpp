@@ -7,18 +7,15 @@ name: Build
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   pull_request:
-    branches: [ "main" ]
-
+    branches: ["main"]
 
   # Path to the solution file relative to the root of the project.
-
 
   # Configuration type to build.
   # You can convert this to a build matrix if you need coverage of multiple configuration types.
   # https://docs.github.com/actions/learn-github-actions/managing-complex-workflows#using-a-build-matrix
-  
 
 permissions:
   contents: read
@@ -28,57 +25,54 @@ jobs:
     runs-on: macos-latest
 
     steps:
-    - uses: actions/checkout@v3
-    
-    - uses: actions/cache@v3
-      with:
-                  path: |
-                      /usr/local/share/vcpkg
+      - uses: actions/checkout@v3
 
-                  key: ${{ runner.os }}-vcpkg-cppunit
-    - name: install
+      - uses: actions/cache@v3
+        with:
+          path: |
+            /usr/local/share/vcpkg
 
-      run: |
+          key: ${{ runner.os }}-vcpkg-cppunit
+      - name: install
 
-            brew install llvm@16
+        run: |
 
-            brew install xmake
+          brew install llvm@16
 
-            brew install libtool automake
+          brew install xmake
 
-                 
+          brew install libtool automake
 
-                 export LDFLAGS="-L/usr/local/opt/llvm/lib"
+               
 
-                 export CPPFLAGS="-I/usr/local/opt/llvm/include"
+               export LDFLAGS="-L/usr/local/opt/llvm/lib"
 
-                 
+               export CPPFLAGS="-I/usr/local/opt/llvm/include"
 
-                 echo 'export PATH="/usr/local/opt/llvm/bin:$PATH"' >> /Users/runner/.bash_profile
+               
 
-    - name: vcpkg-action
+               echo 'export PATH="/usr/local/opt/llvm/bin:$PATH"' >> /Users/runner/.bash_profile
 
-      uses: johnwason/vcpkg-action@v4
-      with:
-             triplet: x64-osx-release
-             pkgs: 'gtest cppunit'
+      - name: vcpkg-action
 
-             token: ${{ github.token }}
-             
-    - uses: xmake-io/github-action-setup-xmake@v1
-      with:
-       xmake-version: latest
-       actions-cache-folder: '.xmake-cache'
-    
+        uses: johnwason/vcpkg-action@v4
+        with:
+          triplet: x64-osx-release
+          pkgs: "gtest cppunit"
 
-    
-    - name: make1
+          token: ${{ github.token }}
 
-      run: xmake f --toolchain=llvm --sdk=/usr/local/opt/llvm/ -y -v
-    - name: make2       
-      run:     xmake build -v -y
-           
+      - uses: xmake-io/github-action-setup-xmake@v1
+        with:
+          xmake-version: latest
+          actions-cache-folder: ".xmake-cache"
 
-    - name: test
+      - name: make1
 
-      run: xmake run -v
+        run: xmake f --toolchain=llvm --sdk=/usr/local/opt/llvm/ -y -v
+      - name: make2
+        run: xmake build -v -y
+
+      - name: test
+
+        run: xmake run -v
