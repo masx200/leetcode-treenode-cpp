@@ -20,6 +20,7 @@ jobs:
         with:
           path: |
             /usr/local/share/vcpkg
+            ./vcpkg
 
           key: ${{ runner.os }}-vcpkg-${{ hashFiles('**/xmake.lua') }}
       - name: install
