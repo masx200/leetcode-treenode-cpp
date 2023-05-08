@@ -33,6 +33,7 @@ jobs:
       with:
           path: |
             C:\vcpkg
+            ./vcpkg
 
           key: ${{ runner.os }}-vcpkg-${{ hashFiles('**/xmake.lua') }}
 
