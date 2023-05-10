@@ -15,7 +15,12 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
+      - uses: actions/cache@v3
+        with:
+                  path: |
+                      /Users/runner/.xmake
 
+                  key: ${{ runner.os }}-xmake-${{ hashFiles('**/xmake.lua') }}
       - uses: actions/cache@v3
         with:
           path: |
@@ -54,7 +59,7 @@ jobs:
 
       - uses: xmake-io/github-action-setup-xmake@v1
         with:
-          xmake-version: latest
+          xmake-version: branch@dev
           actions-cache-folder: ".xmake-cache"
 
       - name: make1
