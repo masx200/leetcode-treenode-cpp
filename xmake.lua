@@ -1,3 +1,4 @@
+set_policy("platform.longpaths", true)
 set_version("1.1.4")
 add_rules("mode.debug", "mode.release")
 add_requires("vcpkg::cppunit")
