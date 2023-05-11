@@ -65,8 +65,8 @@ jobs:
 
       run: xmake f  -y -v
     - name: build
-      run: xmake build -v -y
+      run: xmake build -v -y  -w -g test
 
     - name: test
 
-      run: xmake run -v
+      run: xmake run -v -g test

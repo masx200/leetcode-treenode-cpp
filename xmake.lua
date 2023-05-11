@@ -11,7 +11,8 @@ add_files("*.ixx", { install = true })
 
 target_end()
 target("test")
-
+set_group("test")
+set_default(false)
 set_kind("binary")
 add_files("*.cpp")
 
