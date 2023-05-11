@@ -7,7 +7,7 @@ target("leetcode-treenode-cpp")
 
 set_kind("static")
 
-add_files("*.ixx", { install = true })
+add_files("*.ixx", {install = true})
 
 target_end()
 target("test")
