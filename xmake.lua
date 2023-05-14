@@ -1,3 +1,5 @@
+-- 如果当前编译模式是test
+if is_mode("test") then add_requires("vcpkg::eventpp") end
 set_policy("platform.longpaths", true)
 set_version("1.1.4")
 
@@ -22,7 +24,7 @@ if is_mode("test") then
 
     -- 添加test编译宏
     add_defines("__TEST__")
-
+    add_packages("vcpkg::eventpp")
 end
 set_group("test")
 set_default(false)

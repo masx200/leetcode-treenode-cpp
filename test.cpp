@@ -7,7 +7,9 @@
 #include <cppunit/extensions/HelperMacros.h>
 #include <iostream>
 #include <string>
-
+#ifdef __TEST__
+#include <eventpp/callbacklist.h>
+#endif
 import leetcode_treenode_cpp.TreeNode;
 import leetcode_treenode_cpp.parseLeetCodeBinaryTree;
 import leetcode_treenode_cpp.LeetCodeTreeNodeToString;
@@ -38,6 +40,14 @@ public:
 
     static void test3()
     {
+#ifdef __TEST__
+        auto handleNew = TreeNode::CallbackNew.append([](auto* node) {
+            std::cout << "TreeNode New:" << node << std::endl;
+        });
+        auto handleDelete = TreeNode::CallbackDelete.append([](auto* node) {
+            std::cout << "TreeNode Delete:" << node << std::endl;
+        });
+#endif
         println("test3 start");
         auto rawString = string("[4,2,7,1,3]");
 
@@ -56,10 +66,22 @@ public:
             serialized);
         freeTreeNode(root);
         println("test3 end");
+#ifdef __TEST__
+        TreeNode::CallbackNew.remove(handleNew);
+        TreeNode::CallbackDelete.remove(handleDelete);
+#endif
     }
 
     static void test5()
     {
+#ifdef __TEST__
+        auto handleNew = TreeNode::CallbackNew.append([](auto* node) {
+            std::cout << "TreeNode New:" << node << std::endl;
+        });
+        auto handleDelete = TreeNode::CallbackDelete.append([](auto* node) {
+            std::cout << "TreeNode Delete:" << node << std::endl;
+        });
+#endif
         println("test5 start");
         auto rawString = string("[-4,-2,-7,-1,-3]");
 
@@ -78,10 +100,22 @@ public:
         println(serialized);
         freeTreeNode(root);
         println("test5 end");
+#ifdef __TEST__
+        TreeNode::CallbackNew.remove(handleNew);
+        TreeNode::CallbackDelete.remove(handleDelete);
+#endif
     }
 
     static void test6()
     {
+#ifdef __TEST__
+        auto handleNew = TreeNode::CallbackNew.append([](auto* node) {
+            std::cout << "TreeNode New:" << node << std::endl;
+        });
+        auto handleDelete = TreeNode::CallbackDelete.append([](auto* node) {
+            std::cout << "TreeNode Delete:" << node << std::endl;
+        });
+#endif
         println("test6 start");
         auto rawString = string("[1,null,-4,-2,-7,-1,-3]");
 
@@ -100,6 +134,10 @@ public:
 
         freeTreeNode(root);
         println("test6 end");
+#ifdef __TEST__
+        TreeNode::CallbackNew.remove(handleNew);
+        TreeNode::CallbackDelete.remove(handleDelete);
+#endif
     }
 };
 
