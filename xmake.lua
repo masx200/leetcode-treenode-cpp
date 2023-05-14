@@ -12,7 +12,7 @@ if is_mode("test") then
 
     -- 添加test编译宏
     add_defines("__TEST__")
-
+    add_packages("vcpkg::eventpp")
 end
 set_kind("static")
 
