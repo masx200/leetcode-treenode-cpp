@@ -7,6 +7,7 @@
 #include <cppunit/extensions/HelperMacros.h>
 #include <iostream>
 #include <string>
+#include <unordered_set>
 #ifdef __TEST__
 #include <eventpp/callbacklist.h>
 #endif
@@ -23,7 +24,32 @@ void println(const string& s)
 {
     cout << s << endl;
 }
+#ifdef __TEST__
+struct TreeNodeInspector {
+    unordered_set<TreeNode*> nodes;
+    eventpp::CallbackList<void(TreeNode*)>::Handle handleNew;
+    eventpp::CallbackList<void(TreeNode*)>::Handle handleDelete;
+    TreeNodeInspector()
+    {
+        auto handleNew = TreeNode::CallbackNew.append([this](auto* node) {
+            std::cout << "TreeNode New:" << node << std::endl;
+            nodes.insert(node);
+        });
+        this->handleNew = handleNew;
+        auto handleDelete = TreeNode::CallbackDelete.append([this](auto* node) {
+            std::cout << "TreeNode Delete:" << node << std::endl;
 
+            nodes.erase(node);
+        });
+        this->handleDelete = handleDelete;
+    }
+    ~TreeNodeInspector()
+    {
+        TreeNode::CallbackNew.remove(handleNew);
+        TreeNode::CallbackDelete.remove(handleDelete);
+    }
+};
+#endif
 class StringTest : public CppUnit::TestFixture {
     CPPUNIT_TEST_SUITE(StringTest);
 
@@ -41,12 +67,7 @@ public:
     static void test3()
     {
 #ifdef __TEST__
-        auto handleNew = TreeNode::CallbackNew.append([](auto* node) {
-            std::cout << "TreeNode New:" << node << std::endl;
-        });
-        auto handleDelete = TreeNode::CallbackDelete.append([](auto* node) {
-            std::cout << "TreeNode Delete:" << node << std::endl;
-        });
+        TreeNodeInspector inspector;
 #endif
         println("test3 start");
         auto rawString = string("[4,2,7,1,3]");
@@ -67,20 +88,14 @@ public:
         freeTreeNode(root);
         println("test3 end");
 #ifdef __TEST__
-        TreeNode::CallbackNew.remove(handleNew);
-        TreeNode::CallbackDelete.remove(handleDelete);
+        CPPUNIT_ASSERT_EQUAL(size_t(0), inspector.nodes.size());
 #endif
     }
 
     static void test5()
     {
 #ifdef __TEST__
-        auto handleNew = TreeNode::CallbackNew.append([](auto* node) {
-            std::cout << "TreeNode New:" << node << std::endl;
-        });
-        auto handleDelete = TreeNode::CallbackDelete.append([](auto* node) {
-            std::cout << "TreeNode Delete:" << node << std::endl;
-        });
+        TreeNodeInspector inspector;
 #endif
         println("test5 start");
         auto rawString = string("[-4,-2,-7,-1,-3]");
@@ -101,20 +116,14 @@ public:
         freeTreeNode(root);
         println("test5 end");
 #ifdef __TEST__
-        TreeNode::CallbackNew.remove(handleNew);
-        TreeNode::CallbackDelete.remove(handleDelete);
+        CPPUNIT_ASSERT_EQUAL(size_t(0), inspector.nodes.size());
 #endif
     }
 
     static void test6()
     {
 #ifdef __TEST__
-        auto handleNew = TreeNode::CallbackNew.append([](auto* node) {
-            std::cout << "TreeNode New:" << node << std::endl;
-        });
-        auto handleDelete = TreeNode::CallbackDelete.append([](auto* node) {
-            std::cout << "TreeNode Delete:" << node << std::endl;
-        });
+        TreeNodeInspector inspector;
 #endif
         println("test6 start");
         auto rawString = string("[1,null,-4,-2,-7,-1,-3]");
@@ -135,8 +144,7 @@ public:
         freeTreeNode(root);
         println("test6 end");
 #ifdef __TEST__
-        TreeNode::CallbackNew.remove(handleNew);
-        TreeNode::CallbackDelete.remove(handleDelete);
+        CPPUNIT_ASSERT_EQUAL(size_t(0), inspector.nodes.size());
 #endif
     }
 };
