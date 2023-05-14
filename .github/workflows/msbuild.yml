@@ -63,7 +63,7 @@ jobs:
 
     - name: config
 
-      run: xmake f  -y -v --mode=debug
+      run: xmake f  -y -v --mode=test
     - name: build
       run: xmake build -v -y  -w -g test
 

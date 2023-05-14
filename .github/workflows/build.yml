@@ -64,7 +64,7 @@ jobs:
 
       - name: config
 
-        run: xmake f --toolchain=llvm --sdk=/usr/local/opt/llvm/ -y -v --mode=debug
+        run: xmake f --toolchain=llvm --sdk=/usr/local/opt/llvm/ -y -v --mode=test
       - name: make
         run: xmake build -v -y -w -g test
 
