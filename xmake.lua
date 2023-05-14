@@ -1,6 +1,6 @@
 set_policy("platform.longpaths", true)
 set_version("1.1.4")
-add_rules("mode.test", "mode.release")
+
 add_requires("vcpkg::cppunit")
 set_languages("c17", "cxx20")
 set_project("leetcode-treenode-cpp")
