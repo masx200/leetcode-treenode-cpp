@@ -62,10 +62,10 @@ jobs:
           xmake-version: branch@dev
           actions-cache-folder: ".xmake-cache"
 
-      - name: make1
+      - name: config
 
-        run: xmake f --toolchain=llvm --sdk=/usr/local/opt/llvm/ -y -v
-      - name: make2
+        run: xmake f --toolchain=llvm --sdk=/usr/local/opt/llvm/ -y -v --mode=debug
+      - name: make
         run: xmake build -v -y -w -g test
 
       - name: test
