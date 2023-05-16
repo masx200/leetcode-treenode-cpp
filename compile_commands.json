@@ -1,0 +1,41 @@
+[
+{
+  "directory": "C:\\Users\\Administrator\\Documents\\GitHub\\leetcode-treenode-cpp",
+  "arguments": ["C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.35.32215\\bin\\HostX64\\x64\\cl.exe", "/c", "/nologo", "/std:c++20", "/EHsc", "/IC:\\Users\\Administrator\\Documents\\vcpkg-master\\installed\\x64-windows-static\\include", "/experimental:module", "/Fobuild\\.objs\\test\\windows\\x64\\release\\test.cpp.obj", "test.cpp"],
+  "file": "test.cpp"
+},
+{
+  "directory": "C:\\Users\\Administrator\\Documents\\GitHub\\leetcode-treenode-cpp",
+  "arguments": ["C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.35.32215\\bin\\HostX64\\x64\\cl.exe", "/nologo", "/std:c++20", "/EHsc", "/experimental:module", "/TP", "/c", "TreeNode.ixx", "/Fobuild\\.objs\\leetcode-treenode-cpp\\windows\\x64\\release\\TreeNode.ixx.obj", "/ifcOutput", "build\\.gens\\leetcode-treenode-cpp\\windows\\x64\\release\\rules\\modules\\cache\\ec4a91a6\\leetcode_treenode_cpp.TreeNode.ifc", "/interface"],
+  "file": "TreeNode.ixx"
+},
+{
+  "directory": "C:\\Users\\Administrator\\Documents\\GitHub\\leetcode-treenode-cpp",
+  "arguments": ["C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.35.32215\\bin\\HostX64\\x64\\cl.exe", "/nologo", "/std:c++20", "/EHsc", "/experimental:module", "/TP", "/c", "traversalTreeNode.ixx", "/Fobuild\\.objs\\leetcode-treenode-cpp\\windows\\x64\\release\\traversalTreeNode.ixx.obj", "/ifcOutput", "build\\.gens\\leetcode-treenode-cpp\\windows\\x64\\release\\rules\\modules\\cache\\ec4a91a6\\leetcode_treenode_cpp.traversalTreeNode.ifc", "/interface", "/reference", "leetcode_treenode_cpp.TreeNode=build\\.gens\\leetcode-treenode-cpp\\windows\\x64\\release\\rules\\modules\\cache\\ec4a91a6\\leetcode_treenode_cpp.TreeNode.ifc"],
+  "file": "traversalTreeNode.ixx"
+},
+{
+  "directory": "C:\\Users\\Administrator\\Documents\\GitHub\\leetcode-treenode-cpp",
+  "arguments": ["C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.35.32215\\bin\\HostX64\\x64\\cl.exe", "/nologo", "/std:c++20", "/EHsc", "/experimental:module", "/TP", "/c", "serializeTreeNode.ixx", "/Fobuild\\.objs\\leetcode-treenode-cpp\\windows\\x64\\release\\serializeTreeNode.ixx.obj", "/ifcOutput", "build\\.gens\\leetcode-treenode-cpp\\windows\\x64\\release\\rules\\modules\\cache\\ec4a91a6\\leetcode_treenode_cpp.serializeTreeNode.ifc", "/interface", "/reference", "leetcode_treenode_cpp.TreeNode=build\\.gens\\leetcode-treenode-cpp\\windows\\x64\\release\\rules\\modules\\cache\\ec4a91a6\\leetcode_treenode_cpp.TreeNode.ifc"],
+  "file": "serializeTreeNode.ixx"
+},
+{
+  "directory": "C:\\Users\\Administrator\\Documents\\GitHub\\leetcode-treenode-cpp",
+  "arguments": ["C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.35.32215\\bin\\HostX64\\x64\\cl.exe", "/nologo", "/std:c++20", "/EHsc", "/experimental:module", "/TP", "/c", "freeTreeNode.ixx", "/Fobuild\\.objs\\leetcode-treenode-cpp\\windows\\x64\\release\\freeTreeNode.ixx.obj", "/ifcOutput", "build\\.gens\\leetcode-treenode-cpp\\windows\\x64\\release\\rules\\modules\\cache\\ec4a91a6\\leetcode_treenode_cpp.freeTreeNode.ifc", "/interface", "/reference", "leetcode_treenode_cpp.TreeNode=build\\.gens\\leetcode-treenode-cpp\\windows\\x64\\release\\rules\\modules\\cache\\ec4a91a6\\leetcode_treenode_cpp.TreeNode.ifc"],
+  "file": "freeTreeNode.ixx"
+},
+{
+  "directory": "C:\\Users\\Administrator\\Documents\\GitHub\\leetcode-treenode-cpp",
+  "arguments": ["C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.35.32215\\bin\\HostX64\\x64\\cl.exe", "/nologo", "/std:c++20", "/EHsc", "/experimental:module", "/TP", "/c", "parseLeetCodeBinaryTree.ixx", "/Fobuild\\.objs\\leetcode-treenode-cpp\\windows\\x64\\release\\parseLeetCodeBinaryTree.ixx.obj", "/ifcOutput", "build\\.gens\\leetcode-treenode-cpp\\windows\\x64\\release\\rules\\modules\\cache\\ec4a91a6\\leetcode_treenode_cpp.parseLeetCodeBinaryTree.ifc", "/interface", "/reference", "leetcode_treenode_cpp.TreeNode=build\\.gens\\leetcode-treenode-cpp\\windows\\x64\\release\\rules\\modules\\cache\\ec4a91a6\\leetcode_treenode_cpp.TreeNode.ifc", "/reference", "leetcode_treenode_cpp.freeTreeNode=build\\.gens\\leetcode-treenode-cpp\\windows\\x64\\release\\rules\\modules\\cache\\ec4a91a6\\leetcode_treenode_cpp.freeTreeNode.ifc"],
+  "file": "parseLeetCodeBinaryTree.ixx"
+},
+{
+  "directory": "C:\\Users\\Administrator\\Documents\\GitHub\\leetcode-treenode-cpp",
+  "arguments": ["C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.35.32215\\bin\\HostX64\\x64\\cl.exe", "/nologo", "/std:c++20", "/EHsc", "/experimental:module", "/TP", "/c", "bfsTravelsal.ixx", "/Fobuild\\.objs\\leetcode-treenode-cpp\\windows\\x64\\release\\bfsTravelsal.ixx.obj", "/ifcOutput", "build\\.gens\\leetcode-treenode-cpp\\windows\\x64\\release\\rules\\modules\\cache\\ec4a91a6\\leetcode_treenode_cpp.bfsTravelsal.ifc", "/interface", "/reference", "leetcode_treenode_cpp.TreeNode=build\\.gens\\leetcode-treenode-cpp\\windows\\x64\\release\\rules\\modules\\cache\\ec4a91a6\\leetcode_treenode_cpp.TreeNode.ifc"],
+  "file": "bfsTravelsal.ixx"
+},
+{
+  "directory": "C:\\Users\\Administrator\\Documents\\GitHub\\leetcode-treenode-cpp",
+  "arguments": ["C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.35.32215\\bin\\HostX64\\x64\\cl.exe", "/nologo", "/std:c++20", "/EHsc", "/experimental:module", "/TP", "/c", "LeetCodeTreeNodeToString.ixx", "/Fobuild\\.objs\\leetcode-treenode-cpp\\windows\\x64\\release\\LeetCodeTreeNodeToString.ixx.obj", "/ifcOutput", "build\\.gens\\leetcode-treenode-cpp\\windows\\x64\\release\\rules\\modules\\cache\\ec4a91a6\\leetcode_treenode_cpp.LeetCodeTreeNodeToString.ifc", "/interface", "/reference", "leetcode_treenode_cpp.TreeNode=build\\.gens\\leetcode-treenode-cpp\\windows\\x64\\release\\rules\\modules\\cache\\ec4a91a6\\leetcode_treenode_cpp.TreeNode.ifc", "/reference", "leetcode_treenode_cpp.bfsTravelsal=build\\.gens\\leetcode-treenode-cpp\\windows\\x64\\release\\rules\\modules\\cache\\ec4a91a6\\leetcode_treenode_cpp.bfsTravelsal.ifc"],
+  "file": "LeetCodeTreeNodeToString.ixx"
+}]
