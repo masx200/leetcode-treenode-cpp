@@ -43,10 +43,13 @@ jobs:
 
 #                   key: ${{ runner.os }}-xmake-${{ hashFiles('**/xmake.lua') }}
 
+    - name: install-gcc-13
+      run: |
+          wget http://kayari.org/gcc-latest/gcc-latest.deb && sudo dpkg -i gcc-latest.deb && rm gcc-latest.deb
+          export PATH=/opt/gcc-latest/bin:$PATH
+          export LD_RUN_PATH=/opt/gcc-latest/lib64
+    
 
-    - uses: johelegp/gcc-snapshot@v1.0.0
-      with : 
-          cache: true
           
     - name: vcpkg-action
 
@@ -64,12 +67,12 @@ jobs:
     - name : release
       run: |
           xmake clean -a
-          xmake f  -y -v --toolchain=gcc-13 --mode=release
+          xmake f  -y -v --toolchain=gcc-13 --sdk=/opt/gcc-latest/ --mode=release
           xmake build -v -y  -w 
     - run:   xmake clean -a    
     - name: config
 
-      run: xmake f  -y -v --toolchain=gcc-13  --mode=test
+      run: xmake f  -y -v --toolchain=gcc-13 --sdk=/opt/gcc-latest/ --mode=test
     - name: build
       run: xmake build -v -y  -w -g test
 
