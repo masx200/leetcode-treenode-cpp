@@ -16,11 +16,11 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: actions/cache@v3
-        id: cache-llvm-16-0-3
+        id: cache-llvm
         with:
           path: |
             /usr/local/opt/llvm
-            /usr/local/Cellar/llvm/16.0.3
+          
 
           key: ${{ runner.os }}-llvm-16.0.3
       - uses: actions/cache@v3
@@ -36,27 +36,18 @@ jobs:
             ./vcpkg
 
           key: ${{ runner.os }}-vcpkg-${{ hashFiles('**/xmake.lua') }}
-      - name: install-llvm-16.0.3
-        if: steps.cache-llvm-16-0-3.outputs.cache-hit != 'true'
-        run: |
-          brew install llvm@16.0.3
+      - name: Install LLVM and Clang
+        uses: KyleMayes/install-llvm-action@v1
+        with:
+          version: "16.0.3"
+          directory: /usr/local/opt/llvm
+          cached: ${{ steps.cache-llvm.outputs.cache-hit }}
       - name: install
         run: |
-
-
-
-          brew install xmake
-
+          brew install xmake python@3.11 six z3 zstd 
           brew install libtool automake
-
-               
-
                export LDFLAGS="-L/usr/local/opt/llvm/lib"
-
                export CPPFLAGS="-I/usr/local/opt/llvm/include"
-
-               
-
                echo 'export PATH="/usr/local/opt/llvm/bin:$PATH"' >> /Users/runner/.bash_profile
 
       - name: vcpkg-action
@@ -75,12 +66,12 @@ jobs:
       - name: release
         run: |
           xmake clean -a
-          xmake f  -y -v --toolchain=llvm --sdk=/usr/local/Cellar/llvm/16.0.3 --mode=release
+          xmake f  -y -v --toolchain=llvm --sdk=/usr/local/opt/llvm --mode=release
           xmake build -v -y  -w
       - run: xmake clean -a
       - name: config
 
-        run: xmake f --toolchain=llvm --sdk=/usr/local/Cellar/llvm/16.0.3 -y -v --mode=test
+        run: xmake f --toolchain=llvm --sdk=/usr/local/opt/llvm -y -v --mode=test
       - name: make
         run: xmake build -v -y -w -g test
 
