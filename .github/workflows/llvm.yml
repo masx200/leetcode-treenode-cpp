@@ -15,16 +15,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/cache@v3
-        id: cache-llvm-16
-        with:
-          path: |
-            /usr/local/opt/llvm
-            ~/Library/Caches/Homebrew
-            /usr/local/Cellar/llvm/
-          
-
-          key: ${{ runner.os }}-llvm-16
+      
       - uses: actions/cache@v3
         with:
           path: |
@@ -40,8 +31,14 @@ jobs:
           key: ${{ runner.os }}-vcpkg-${{ hashFiles('**/xmake.lua') }}
       - name: Install LLVM and Clang
         
-        if: ${{ steps.cache-llvm-16.outputs.cache-hit!= 'true' }}
-        run: brew install llvm@16
+        
+        run: |
+          export HOMEBREW_API_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles/api"
+          export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles"
+          export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git"
+          export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-core.git"
+          export HOMEBREW_PIP_INDEX_URL="https://pypi.tuna.tsinghua.edu.cn/simple"
+          brew install llvm@16
       - name: install
         run: |
           brew install xmake python@3.11 six z3 zstd 
