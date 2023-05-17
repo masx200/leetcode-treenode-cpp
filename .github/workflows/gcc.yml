@@ -42,12 +42,9 @@ jobs:
 #                       C:\Users\runneradmin\AppData\Local\.xmake
 
 #                   key: ${{ runner.os }}-xmake-${{ hashFiles('**/xmake.lua') }}
-#     - name: Add MSBuild to PATH
-#       uses: microsoft/setup-msbuild@v1.0.2
-#       with:
-#         vs-prerelease: true
 
-    - uses: johelegp/gcc-snapshot@v1 # This action.
+
+    - uses: johelegp/gcc-snapshot@v1.0.0
       with : 
           cache: true
           
