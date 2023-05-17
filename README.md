@@ -32,7 +32,7 @@ https://github.com/uniform641/treeparse
 
 # serializeTreeNode
 
-把二叉树序列号成类似于 JSON 对象的形式字符串
+把二叉树序列化成类似于 JSON 对象的形式字符串
 
 # 图片展示
 
