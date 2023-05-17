@@ -48,3 +48,4 @@ cmake_install.cmake
 CMakeCache.txt
 *.nupkg
 checks.json
+node_modules

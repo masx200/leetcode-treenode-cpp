@@ -7,9 +7,9 @@ name: gcc
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
 
 env:
   # Path to the solution file relative to the root of the project.
@@ -28,63 +28,61 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
-    - uses: actions/cache@v3
-      id: cache-gcc-13
-      with:
+      - uses: actions/checkout@v3
+      - uses: actions/cache@v3
+        id: cache-gcc-13
+        with:
           path: |
             /opt/gcc-latest/
 
           key: ${{ runner.os }}-gcc-13
-    - uses: actions/cache@v3
-      with:
+      - uses: actions/cache@v3
+        with:
           path: |
             /usr/local/share/vcpkg
             ./vcpkg
 
           key: ${{ runner.os }}-vcpkg-${{ hashFiles('**/xmake.lua') }}
-    - uses: actions/cache@v3
-      with:
-                  path: |
-                      ~\.xmake
+      - uses: actions/cache@v3
+        with:
+          path: |
+            ~\.xmake
 
-                  key: ${{ runner.os }}-xmake-${{ hashFiles('**/xmake.lua') }}
+          key: ${{ runner.os }}-xmake-${{ hashFiles('**/xmake.lua') }}
 
-    - name: install-gcc-13
-      if: steps.cache-gcc-13.outputs.cache-hit != 'true'
-      run: |
+      - name: install-gcc-13
+        if: steps.cache-gcc-13.outputs.cache-hit != 'true'
+        run: |
           wget http://kayari.org/gcc-latest/gcc-latest.deb && sudo dpkg -i gcc-latest.deb && rm gcc-latest.deb
-    - run: |
+      - run: |
           export PATH=/opt/gcc-latest/bin:$PATH
           export LD_RUN_PATH=/opt/gcc-latest/lib64
-    
 
-          
-    - name: vcpkg-action
+      - name: vcpkg-action
 
-      uses: johnwason/vcpkg-action@v4
-      with:
+        uses: johnwason/vcpkg-action@v4
+        with:
           triplet: x64-linux-release
           pkgs: "gtest cppunit"
 
           token: ${{ github.token }}
 
-    - uses: xmake-io/github-action-setup-xmake@v1
-      with:
+      - uses: xmake-io/github-action-setup-xmake@v1
+        with:
           xmake-version: branch@dev
           actions-cache-folder: ".xmake-cache"
-    - name : release
-      run: |
+      - name: release
+        run: |
           xmake clean -a
           xmake f  -y -v --toolchain=gcc --sdk=/opt/gcc-latest/ --mode=release
-          xmake build -v -y  -w 
-    - run:   xmake clean -a    
-    - name: config
+          xmake build -v -y  -w
+      - run: xmake clean -a
+      - name: config
 
-      run: xmake f  -y -v --toolchain=gcc --sdk=/opt/gcc-latest/ --mode=test
-    - name: build
-      run: xmake build -v -y  -w -g test
+        run: xmake f  -y -v --toolchain=gcc --sdk=/opt/gcc-latest/ --mode=test
+      - name: build
+        run: xmake build -v -y  -w -g test
 
-    - name: test
+      - name: test
 
-      run: xmake run -v -g test
+        run: xmake run -v -g test
