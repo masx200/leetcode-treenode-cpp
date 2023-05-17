@@ -16,7 +16,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: actions/cache@v3
-        id: cache-llvm-16.0.3
+        id: cache-llvm-16-0-3
         with:
           path: |
             /usr/local/opt/llvm
@@ -37,7 +37,7 @@ jobs:
 
           key: ${{ runner.os }}-vcpkg-${{ hashFiles('**/xmake.lua') }}
       - name: install-llvm-16.0.3
-        if: steps.cache-llvm-16.outputs.cache-hit != 'true'
+        if: steps.cache-llvm-16-0-3.outputs.cache-hit != 'true'
         run: |
           brew install llvm@16.0.3
       - name: install
