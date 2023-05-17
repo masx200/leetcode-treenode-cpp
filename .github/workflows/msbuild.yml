@@ -64,7 +64,7 @@ jobs:
           xmake clean -a
           xmake f  -y -v --mode=release
           xmake build -v -y  -w 
-    
+    - run:   xmake clean -a    
     - name: config
 
       run: xmake f  -y -v --mode=test
