@@ -29,13 +29,20 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-#     - uses: actions/cache@v3
-#       with:
-#           path: |
-#             C:\vcpkg
-#             ./vcpkg
+    - uses: actions/cache@v3
+      id: cache-gcc-latest
+      with:
+          path: |
+            /opt/gcc-latest/
 
-#           key: ${{ runner.os }}-vcpkg-${{ hashFiles('**/xmake.lua') }}
+          key: ${{ runner.os }}-gcc-latest
+    - uses: actions/cache@v3
+      with:
+          path: |
+            /usr/local/share/vcpkg
+            ./vcpkg
+
+          key: ${{ runner.os }}-vcpkg-${{ hashFiles('**/xmake.lua') }}
 #     - uses: actions/cache@v3
 #       with:
 #                   path: |
@@ -44,8 +51,10 @@ jobs:
 #                   key: ${{ runner.os }}-xmake-${{ hashFiles('**/xmake.lua') }}
 
     - name: install-gcc-13
+      if: steps.cache-gcc-latest.outputs.cache-hit != 'true'
       run: |
           wget http://kayari.org/gcc-latest/gcc-latest.deb && sudo dpkg -i gcc-latest.deb && rm gcc-latest.deb
+    - run: |
           export PATH=/opt/gcc-latest/bin:$PATH
           export LD_RUN_PATH=/opt/gcc-latest/lib64
     
