@@ -55,9 +55,24 @@ jobs:
         run: |
           wget http://kayari.org/gcc-latest/gcc-latest.deb && sudo dpkg -i gcc-latest.deb && rm gcc-latest.deb
       - run: |
-          export PATH=/opt/gcc-latest/bin:$PATH
-          export LD_RUN_PATH=/opt/gcc-latest/lib64
+          sudo chmod 777 /etc/apt/sources.list
+          sudo cat >>/etc/apt/sources.list<<EOF
+
+          deb http://azure.archive.ubuntu.com/ubuntu/ lunar-proposed main restricted universe multiverse
+          deb http://azure.archive.ubuntu.com/ubuntu/ lunar main restricted universe multiverse
+          deb http://azure.archive.ubuntu.com/ubuntu/ lunar-backports main restricted universe multiverse
+          deb http://azure.archive.ubuntu.com/ubuntu/ lunar-security main restricted universe multiverse
+          deb http://azure.archive.ubuntu.com/ubuntu/ lunar-updates main restricted universe multiverse
+          EOF
+          sudo apt update
+          sudo apt install gcc-13 g++-13 gcc g++ gcc-13-locales g++-multilib -y
+          export PATH="/opt/gcc-latest/bin:$PATH"
+          export LD_RUN_PATH="/opt/gcc-latest/lib64"
           echo 'export PATH="/opt/gcc-latest/bin:$PATH"' >> ~/.profile
+          sudo rm -vf /usr/bin/gcc
+          sudo ln -sv /opt/gcc-latest/bin/gcc /usr/bin/gcc
+          sudo rm -vf /usr/bin/g++
+          sudo ln -sv /opt/gcc-latest/bin/g++ /usr/bin/g++
 
       - name: vcpkg-action
 

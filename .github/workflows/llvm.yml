@@ -20,9 +20,8 @@ jobs:
         with:
           path: |
             /usr/local/opt/llvm
- 
+
             /usr/local/Cellar/llvm/
-          
 
           key: ${{ runner.os }}-llvm-16
       - uses: actions/cache@v3
@@ -39,7 +38,7 @@ jobs:
 
           key: ${{ runner.os }}-vcpkg-${{ hashFiles('**/xmake.lua') }}
       - name: Install LLVM and Clang
-        
+
         if: ${{ steps.cache-llvm-16.outputs.cache-hit!= 'true' }}
         run: brew install llvm@16
       - name: install
