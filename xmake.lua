@@ -19,7 +19,7 @@ set_kind("static")
 add_files("*.ixx", {install = true})
 
 target_end()
-target("test")
+target("leetcode-treenode-cpp-test")
 if is_mode("test") then
 
     -- 添加test编译宏
