@@ -20,6 +20,7 @@ jobs:
         with:
           path: |
             /usr/local/opt/llvm
+            /usr/local/Cellar/llvm
 
           key: ${{ runner.os }}-llvm-16
       - uses: actions/cache@v3
