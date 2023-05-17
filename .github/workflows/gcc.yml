@@ -67,12 +67,12 @@ jobs:
     - name : release
       run: |
           xmake clean -a
-          xmake f  -y -v --toolchain=gcc-13 --sdk=/opt/gcc-latest/ --mode=release
+          xmake f  -y -v --toolchain=gcc --sdk=/opt/gcc-latest/ --mode=release
           xmake build -v -y  -w 
     - run:   xmake clean -a    
     - name: config
 
-      run: xmake f  -y -v --toolchain=gcc-13 --sdk=/opt/gcc-latest/ --mode=test
+      run: xmake f  -y -v --toolchain=gcc --sdk=/opt/gcc-latest/ --mode=test
     - name: build
       run: xmake build -v -y  -w -g test
 
