@@ -60,7 +60,8 @@ jobs:
       with:
           xmake-version: branch@dev
           actions-cache-folder: ".xmake-cache"
-    - run: |
+    - name : release
+      run: |
           xmake clean -a
           xmake f  -y -v --mode=release
           xmake build -v -y  -w 
