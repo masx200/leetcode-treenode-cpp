@@ -61,7 +61,11 @@ jobs:
         with:
           xmake-version: branch@dev
           actions-cache-folder: ".xmake-cache"
-
+      - run: |
+          xmake clean -a
+          xmake f  -y -v --toolchain=llvm --sdk=/usr/local/opt/llvm/ --mode=release
+          xmake build -v -y  -w 
+      - run:   xmake clean -a
       - name: config
 
         run: xmake f --toolchain=llvm --sdk=/usr/local/opt/llvm/ -y -v --mode=test
