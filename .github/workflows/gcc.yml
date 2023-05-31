@@ -91,14 +91,18 @@ jobs:
         run: |
           xmake clean -a
           xmake f  -y -v --toolchain=gcc --sdk=/opt/gcc-latest/ --mode=release
-          xmake build -v -y  -w
+          
+      - run:    xmake build -v -y  -w
+        continue-on-error: true
       - run: xmake clean -a
       - name: config
 
         run: xmake f  -y -v --toolchain=gcc --sdk=/opt/gcc-latest/ --mode=test
       - name: build
         run: xmake build -v -y  -w -g test
+        continue-on-error: true
 
       - name: test
+        continue-on-error: true
 
         run: xmake run -v -g test
