@@ -13,6 +13,6 @@
     "url": "https://github.com/masx200/leetcode-treenode-cpp"
   },
   "dependencies": {
-    "prettier": "^2.8.8"
+    "prettier": "^3.0.0"
   }
 }
