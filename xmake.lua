@@ -16,7 +16,7 @@ if is_mode("test") then
 end
 set_kind("static")
 
-add_files("*.ixx", {install = true})
+add_files("*.ixx", {install = true,public=true})
 
 target_end()
 target("leetcode-treenode-cpp-test")
