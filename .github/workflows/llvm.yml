@@ -19,7 +19,7 @@ jobs:
         id: cache-llvm-16
         with:
           path: |
-            /usr/local/opt/llvm
+            /opt/homebrew/opt/llvm@16
 
             /usr/local/Cellar/llvm/
 
@@ -45,9 +45,9 @@ jobs:
         run: |
           brew install xmake python@3.11 six z3 zstd 
           brew install libtool automake
-               export LDFLAGS="-L/usr/local/opt/llvm/lib"
-               export CPPFLAGS="-I/usr/local/opt/llvm/include"
-               echo 'export PATH="/usr/local/opt/llvm/bin:$PATH"' >> /Users/runner/.bash_profile
+               export LDFLAGS="-L/opt/homebrew/opt/llvm@16/lib"
+               export CPPFLAGS="-I/opt/homebrew/opt/llvm@16/include"
+               echo 'export PATH="/opt/homebrew/opt/llvm@16/bin:$PATH"' >> /Users/runner/.bash_profile
 
       - name: vcpkg-action
 
@@ -65,12 +65,12 @@ jobs:
       - name: release
         run: |
           xmake clean -a
-          xmake f  -y -v --toolchain=llvm --sdk=/usr/local/opt/llvm --mode=release
+          xmake f  -y -v --toolchain=llvm --sdk=/opt/homebrew/opt/llvm@16 --mode=release
           xmake build -v -y  -w
       - run: xmake clean -a
       - name: config
 
-        run: xmake f --toolchain=llvm --sdk=/usr/local/opt/llvm -y -v --mode=test
+        run: xmake f --toolchain=llvm --sdk=/opt/homebrew/opt/llvm@16 -y -v --mode=test
       - name: make
         run: xmake build -v -y -w -g test
 
