@@ -1,7 +1,7 @@
 -- 如果当前编译模式是test
 if is_mode("test") then add_requires("vcpkg::eventpp") end
 set_policy("platform.longpaths", true)
-set_version("1.1.4")
+set_version("1.2.0")
 
 add_requires("vcpkg::cppunit")
 set_languages("c17", "cxx20")
