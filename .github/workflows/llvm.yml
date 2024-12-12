@@ -41,6 +41,7 @@ jobs:
 
         if: ${{ steps.cache-llvm-16.outputs.cache-hit!= 'true' }}
         run: brew install llvm@16
+      - run: export PATH="/opt/homebrew/opt/llvm@16/bin:$PATH"  
       - name: install
         run: |
           brew install xmake python@3.11 six z3 zstd 
