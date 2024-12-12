@@ -63,7 +63,9 @@ jobs:
         with:
           xmake-version: branch@dev
           actions-cache-folder: ".xmake-cache"
-      - name: release
+      - name: build release
+        env: 
+          VCPKG_ROOT: "/Users/runner/work/leetcode-treenode-cpp/leetcode-treenode-cpp/vcpkg"
         run: |
           xmake clean -a
           xmake f  -y -v --toolchain=llvm --sdk=/opt/homebrew/opt/llvm@16 --mode=release
