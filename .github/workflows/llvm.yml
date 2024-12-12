@@ -19,6 +19,7 @@ jobs:
         id: cache-llvm-16
         with:
           path: |
+            /opt/homebrew/Cellar/llvm@16/
             /opt/homebrew/opt/llvm@16
 
             /usr/local/Cellar/llvm/
