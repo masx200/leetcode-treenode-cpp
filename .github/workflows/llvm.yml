@@ -48,7 +48,7 @@ jobs:
           brew install libtool automake
           export LDFLAGS="-L/opt/homebrew/opt/llvm@16/lib"
           export CPPFLAGS="-I/opt/homebrew/opt/llvm@16/include"
-          echo 'export PATH="/opt/homebrew/opt/llvm@16/bin:$PATH"' >> /Users/runner/.bash_profile
+          echo 'export PATH="/opt/homebrew/opt/llvm@16/bin:$PATH"' >> ~/.bash_profile
 
       - name: vcpkg-action
 
@@ -59,7 +59,7 @@ jobs:
 
           token: ${{ github.token }}
       - run: export VCPKG_ROOT="/Users/runner/work/leetcode-treenode-cpp/leetcode-treenode-cpp/vcpkg"
-      - run: echo 'VCPKG_ROOT="/Users/runner/work/leetcode-treenode-cpp/leetcode-treenode-cpp/vcpkg"' >> /Users/runner/.bash_profile
+      - run: echo 'VCPKG_ROOT="/Users/runner/work/leetcode-treenode-cpp/leetcode-treenode-cpp/vcpkg"' >> ~/.bash_profile
       - uses: xmake-io/github-action-setup-xmake@v1
         with:
           xmake-version: branch@dev
@@ -73,11 +73,16 @@ jobs:
           xmake build -v -y  -w
       - run: xmake clean -a
       - name: config
+        env: 
+          VCPKG_ROOT: "/Users/runner/work/leetcode-treenode-cpp/leetcode-treenode-cpp/vcpkg"
 
         run: xmake f --toolchain=llvm --sdk=/opt/homebrew/opt/llvm@16 -y -v --mode=test
       - name: make
+        env: 
+          VCPKG_ROOT: "/Users/runner/work/leetcode-treenode-cpp/leetcode-treenode-cpp/vcpkg"
         run: xmake build -v -y -w -g test
 
       - name: test
-
+        env: 
+          VCPKG_ROOT: "/Users/runner/work/leetcode-treenode-cpp/leetcode-treenode-cpp/vcpkg"
         run: xmake run -v -g test
