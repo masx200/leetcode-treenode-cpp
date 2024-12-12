@@ -58,7 +58,7 @@ jobs:
           pkgs: "gtest cppunit"
 
           token: ${{ github.token }}
-
+      - run: export VCPKG_ROOT="/Users/runner/work/leetcode-treenode-cpp/leetcode-treenode-cpp/vcpkg"
       - uses: xmake-io/github-action-setup-xmake@v1
         with:
           xmake-version: branch@dev
